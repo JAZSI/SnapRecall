@@ -66,7 +66,23 @@ searchable. Everything runs on your machine: **no cloud, no accounts, no network
 | Validation | Zod |
 | Packaging | electron-builder |
 
-## 📦 Installation
+## ⬇️ Download
+
+Grab the latest installer for your platform from the
+[**Releases page**](https://github.com/JAZSI/SnapRecall/releases/latest):
+
+[![Download](https://img.shields.io/github/v/release/JAZSI/SnapRecall?label=Download&logo=github&sort=semver)](https://github.com/JAZSI/SnapRecall/releases/latest)
+
+| Platform | Installer |
+|----------|-----------|
+| 🪟 Windows | `SnapRecall-<version>-x64.exe` |
+| 🍎 macOS | `SnapRecall-<version>.dmg` |
+| 🐧 Linux | `SnapRecall-<version>.AppImage` · `SnapRecall-<version>.deb` |
+
+> Builds are unsigned. On Windows choose **More info → Run anyway** if SmartScreen
+> appears; on macOS right-click the app and pick **Open** the first time.
+
+## 🧑‍💻 Build from source
 
 > **Requirements:** Node.js 18+ and npm.
 
@@ -76,6 +92,9 @@ cd SnapRecall
 npm install        # also rebuilds native modules for Electron
 npm run dev        # launch in development with hot reload
 ```
+
+Build installers yourself with `npm run dist:win`, `npm run dist:mac`, or
+`npm run dist:linux` — output lands in `release/`.
 
 On first launch SnapRecall auto-detects your system screenshot folder and begins
 indexing. You can add or remove folders any time in **Settings**.
