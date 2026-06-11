@@ -1,0 +1,78 @@
+{
+  "name": "snaprecall",
+  "version": "0.1.0",
+  "description": "Local-first desktop search across your screenshots, powered by OCR.",
+  "author": "Jaszi <79008835+JAZSI@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/JAZSI/SnapRecall#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAZSI/SnapRecall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JAZSI/SnapRecall/issues"
+  },
+  "keywords": [
+    "screenshots",
+    "ocr",
+    "search",
+    "electron",
+    "sqlite",
+    "fts5",
+    "tesseract",
+    "desktop",
+    "offline",
+    "privacy"
+  ],
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "preview": "electron-vite preview",
+    "start": "electron-vite preview",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "fetch:lang": "node scripts/fetch-tessdata.mjs",
+    "rebuild": "electron-builder install-app-deps",
+    "postinstall": "electron-builder install-app-deps",
+    "pack:win": "npm run build && electron-builder --win --dir",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "dist:linux": "npm run build && electron-builder --linux"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-regular-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.1",
+    "better-sqlite3": "^11.8.1",
+    "chokidar": "^4.0.3",
+    "sharp": "^0.33.5",
+    "tesseract.js": "^5.1.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.7",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.4.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.11"
+  }
+}

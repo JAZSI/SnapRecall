@@ -1,0 +1,38 @@
+appId: com.snaprecall.app
+productName: SnapRecall
+copyright: Copyright © 2026 Jaszi
+publish:
+  provider: github
+  owner: JAZSI
+  repo: SnapRecall
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+extraResources:
+  - from: resources/tessdata
+    to: tessdata
+    filter:
+      - "**/*"
+asarUnpack:
+  - "**/node_modules/better-sqlite3/**"
+  - "**/node_modules/sharp/**"
+  - "**/node_modules/@img/**"
+win:
+  target:
+    - nsis
+  artifactName: ${productName}-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+mac:
+  target:
+    - dmg
+  category: public.app-category.productivity
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Utility
